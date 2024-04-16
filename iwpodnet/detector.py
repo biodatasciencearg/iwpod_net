@@ -19,7 +19,7 @@ class IwpodNet:
         
 
     
-    def get_roi(self, Ivehicle, vtype="fullimage"):
+    def get_roi(self, Ivehicle, vtype="fullimage", verbose=0):
         """
         Method to obtain Region of interes a.k.a licence_plate.
         Ivehicle :array  numpy array with frame.
@@ -61,7 +61,8 @@ class IwpodNet:
                                          , im2single(Ivehicle)
                                          , WPODResolution*ASPECTRATIO, 2**4
                                          , lp_output_resolution
-                                         , self.lp_threshold)
+                                         , self.lp_threshold
+                                         , verbose=verbose)
         for i, img in enumerate(LlpImgs):
             #
             #  Draws LP quadrilateral in input image

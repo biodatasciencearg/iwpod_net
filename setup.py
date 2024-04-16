@@ -8,9 +8,7 @@ setup(
     author='ELIASLOPEZ',
     license='MIT',
     package_data={'': ['weights/iwpod_net.json','weights/iwpod_net.h5']},
-    include_package_data=True,
-    install_requires = ["keras==2.15.0"
-                        ,"opencv-python==4.8.1.78"
-                        ,"numpy==1.23.5"
-                        , "tensorflow==2.15.0"]
+    include_package_data=True, 
+    install_requires = ["opencv-python==4.8.1.78"
+                        ,"numpy==1.23.5"]
     )

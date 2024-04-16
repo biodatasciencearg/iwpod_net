@@ -37,7 +37,7 @@ def load_model(path,custom_objects={},verbose=0):
 
 
 
-def detect_lp_width(model, I,  MAXWIDTH, net_step, out_size, threshold):
+def detect_lp_width(model, I,  MAXWIDTH, net_step, out_size, threshold, verbose=0):
 	
 	#
 	#  Resizes input image and run IWPOD-NET
@@ -62,7 +62,7 @@ def detect_lp_width(model, I,  MAXWIDTH, net_step, out_size, threshold):
 	#  Runs LP detection network
 	#
 	start 	= time.time()
-	Yr 		= model.predict(T)
+	Yr 		= model.predict(T, verbose=verbose)
 	Yr 		= np.squeeze(Yr)
 	elapsed = time.time() - start
 
