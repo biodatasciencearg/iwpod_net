@@ -22,10 +22,10 @@ from iwpodnet.detector import *
 detector = IwpodNet()
 
 # Load test image.
- frame = cv2.imread("002.jpg")
+frame = cv2.imread("./imgs/002.jpg")
 
 #  Get List of Regions Of Interest (ROI).
-roi = a.get_roi(frame)
+roi = detector.get_roi(frame)
 
 # Save The first ROI
 cv2.imwrite('roi_best.jpg',roi[0])

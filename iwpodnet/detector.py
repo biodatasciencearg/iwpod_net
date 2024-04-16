@@ -15,7 +15,8 @@ class IwpodNet:
         #
         #  Loads network and weights
         #
-        self.iwpod_net = load_model('iwpodnet.weights.iwpod_net')
+        self.iwpod_net = load_model('iwpod_net')
+        
 
     
     def get_roi(self, Ivehicle, vtype="fullimage"):

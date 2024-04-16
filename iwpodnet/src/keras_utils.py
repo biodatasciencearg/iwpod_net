@@ -5,7 +5,6 @@ import cv2
 import time
 
 from os.path import splitext
-
 from iwpodnet.src.label import Label
 from iwpodnet.src.utils import getWH, nms
 from iwpodnet.src.projection_utils import getRectPts, find_T_matrix
@@ -19,13 +18,18 @@ class DLabel (Label):
 		br = np.amax(pts,1)
 		Label.__init__(self,cl,tl,br,prob)
 
+import pkgutil
 
 def load_model(path,custom_objects={},verbose=0):
 	from tensorflow.keras.models import model_from_json
-
-	path = splitext(path)[0]
-	with open('%s.json' % path,'r') as json_file:
-		model_json = json_file.read()
+	
+	model_json = pkgutil.get_data("iwpodnet", "weights/iwpod_net.json")
+	weights    = pkgutil.get_data("iwpodnet","weights/iwpod_net.h5")
+	
+	with open(f"{path}.h5", "wb") as binary_file:
+		# Write bytes to file
+		binary_file.write(weights)
+	
 	model = model_from_json(model_json, custom_objects=custom_objects)
 	model.load_weights('%s.h5' % path)
 	if verbose: print('Loaded from %s' % path)
