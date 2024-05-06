@@ -10,5 +10,7 @@ setup(
     package_data={'': ['weights/iwpod_net.json','weights/iwpod_net.h5']},
     include_package_data=True, 
     install_requires = ["opencv-python==4.8.1.78"
-                        ,"numpy==1.23.5"]
+                        ,"numpy==1.23.5"
+                        ,"keras==3.3.3"
+                        , "tensorflow==2.16.1"]
     )

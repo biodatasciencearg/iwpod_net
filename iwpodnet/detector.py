@@ -19,7 +19,7 @@ class IwpodNet:
         
 
     
-    def get_roi(self, Ivehicle, vtype="fullimage", verbose=0):
+    def predict(self, Ivehicle, vtype="fullimage", verbose=0):
         """
         Method to obtain Region of interes a.k.a licence_plate.
         Ivehicle :array  numpy array with frame.

@@ -25,7 +25,7 @@ detector = IwpodNet()
 frame = cv2.imread("./imgs/002.jpg")
 
 #  Get List of Regions Of Interest (ROI).
-roi = detector.get_roi(frame)
+roi = detector.predict(frame)
 
 # Save The first ROI
 cv2.imwrite('roi_best.jpg',roi[0])
